@@ -9,7 +9,7 @@ node {
         sh 'cat cidc-webpage/Dockerfile | docker build -f - . -t asia.gcr.io/myfirst-devops-project/metallic-slider:v1'
         sh 'docker image list'
         sh 'gcloud auth configure-docker -q'
-		sh 'docker push asia.gcr.io/myfirst-devops-project/springboot-site:v1'
+	sh 'docker push asia.gcr.io/myfirst-devops-project/metallic-slider:v1'
     }
 
     stage("GKE Setup"){
