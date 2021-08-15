@@ -11,7 +11,7 @@ node {
         sh 'wget https://storage.cloud.google.com/keycopy/kubernetes-project-320712-2e2e390a846e.json'
 	sh 'chmod 777 kubernetes-project-320712-2e2e390a846e.json'
 	sh 'pwd'
-	sh 'gcloud auth activate-service-account --key-file=/var/lib/jenkins/kubernetes-project-320712-2e2e390a846e.json'
+	sh 'gcloud auth activate-service-account --key-file=/var/lib/jenkins/workspace/cicd-webapp/kubernetes-project-320712-2e2e390a846e.json'
         sh 'gcloud auth configure-docker -q'
 	sh 'docker push asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
     }
