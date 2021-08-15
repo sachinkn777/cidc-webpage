@@ -19,7 +19,7 @@ node {
                 sh 'gcloud config set project metallic-slider'
                 sh 'gcloud config set compute/region asia-south2'
                 sh 'gcloud container clusters create metallic-gke-cluster --num-nodes=1 --zone=asia-south2-a'
-                sh 'gcloud container clusters get-credentials metallic-gke-cluster'
+                sh 'gcloud container clusters get-credentials metallic-gke-cluster --zone=asia-south2-a'
                 sh 'kubectl create deployment metallic-slider --image=asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
                 sh 'kubectl expose deployment metallic-slider --type LoadBalancer --port 80 --target-port 80'
                 sh 'kubectl get pods'
