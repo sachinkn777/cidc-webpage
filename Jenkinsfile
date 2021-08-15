@@ -8,8 +8,10 @@ node {
         sh 'docker version'
         sh 'cat cidc-webpage/Dockerfile | docker build -f - . -t asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
         sh 'docker image list'
+	sh 'wget https://storage.cloud.google.com/keycopy/kubernetes-project-320712-ecb76cf67b2a.json'
+	sh 'gcloud auth activate-service-account 1075979236969-compute@developer.gserviceaccount.com --key-file=./kubernetes-project-320712-ecb76cf67b2a.json --project=kubernetes-project-320712'
         sh 'gcloud auth configure-docker -q'
-		sh 'docker push asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
+	sh 'docker push asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
     }
 
     stage("GKE Setup"){
