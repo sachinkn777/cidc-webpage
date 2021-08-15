@@ -6,20 +6,19 @@ node {
 
     stage("Docker build"){
         sh 'docker version'
-        sh 'cat cidc-webpage/Dockerfile | docker build -f - . -t asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
+        sh 'cat cidc-webpage/Dockerfile | docker build -f - . -t asia.gcr.io/metallic-slider/metallic-slider:v1'
         sh 'docker image list'
-        sh 'wget https://storage.cloud.google.com/keycopy/kubernetes-project-320712-2e2e390a846e.json'
         sh 'gcloud auth configure-docker -q'
-	sh 'docker push asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
+	sh 'docker push asia.gcr.io/metallic-slider/metallic-slider:v1'
     }
 
     stage("GKE Setup"){
    
-                sh 'gcloud config set project kubernetes-project-320712'
+                sh 'gcloud config set project metallic-slider'
                 sh 'gcloud config set compute/region asia-south2'
                 sh 'gcloud container clusters create metallic-gke-cluster --num-nodes=1 --zone=asia-south2-a'
                 sh 'gcloud container clusters get-credentials myfirstdevop-gke-cluster'
-                sh 'kubectl create deployment metallic-slider --image=asia.gcr.io/kubernetes-project-320712/metallic-slider:v1'
+                sh 'kubectl create deployment metallic-slider --image=asia.gcr.io/metallic-slider/metallic-slider:v1'
                 sh 'kubectl expose deployment metallic-slider --type LoadBalancer --port 80 --target-port 80'
                 sh 'kubectl get pods'
                 sh 'kubectl get service'
