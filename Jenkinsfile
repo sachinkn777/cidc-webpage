@@ -1,6 +1,6 @@
 node {
     stage("Git Check"){
-	    	
+	    	sh 'rm -rf /var/lib/jenkins/workspace/cicd-webapp*'
 		sh 'git clone https://github.com/sachinkn777/cidc-webpage.git'
 		sh 'ls -ltr '
 	    	
