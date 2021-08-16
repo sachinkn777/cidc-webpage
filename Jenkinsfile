@@ -8,11 +8,9 @@ node {
 
     stage("Docker build"){
         sh 'docker version'
-	sh 'cd cicd-webapp'
-	sh 'cd cicd-webapp'
 	sh 'ls -ltr'
 	sh 'pwd'
-        sh 'docker build -t asia.gcr.io/metallic-slider/metallic-slider:v11 .'
+        sh 'docker build -t asia.gcr.io/metallic-slider/metallic-slider:v11 ./cicd-webapp'
         sh 'docker image list'
 	sh 'gcloud auth activate-service-account junkins-master@metallic-slider.iam.gserviceaccount.com --key-file=/var/lib/jenkins/metallic-slider-1b482ff0dbd1.json'
         sh 'gcloud auth configure-docker -q'
