@@ -1,5 +1,6 @@
 node {
     stage("Git Check"){
+		sh 'git clone https://github.com/sachinkn777/cidc-webpage.git'
 		sh 'ls -ltr '
 	    	
     }
