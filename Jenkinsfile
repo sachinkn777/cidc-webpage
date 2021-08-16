@@ -8,7 +8,6 @@ node {
 	
     stage("gcloud auth"){
 	sh 'gcloud auth list'
-	sh 'gcloud auth revoke junkins-master@metallic-slider.iam.gserviceaccount.com'
 	sh 'gcloud auth activate-service-account junkins-master@metallic-slider.iam.gserviceaccount.com --key-file=/var/lib/jenkins/metallic-slider-1b482ff0dbd1.json'
 	sh 'gcloud config set account junkins-master@metallic-slider.iam.gserviceaccount.com'
         sh 'gcloud auth configure-docker -q'
