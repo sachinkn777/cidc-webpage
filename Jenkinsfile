@@ -8,7 +8,7 @@ node {
 
     stage("Docker build"){
         sh 'docker version'
-	sh 'cd cidc-webpage'
+	sh 'cd /var/lib/jenkins/workspace/cicd-webapp/cidc-webpage'
 	sh 'ls -ltr'
 	sh 'pwd'
         sh 'docker build -t asia.gcr.io/metallic-slider/metallic-slider:v11 .'
