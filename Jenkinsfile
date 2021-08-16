@@ -1,10 +1,5 @@
 node {
-    
-	
-    stage("Clean UP"){
-	   sh 'sudo rm -rf /var/lib/jenkins/workspace/cicd-webapp*'
-    }
-		
+    		
     stage("Git Clone"){
         sh 'git clone https://github.com/sachinkn777/cidc-webpage.git'
 		sh 'ls -ltr ./'
