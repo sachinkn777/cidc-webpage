@@ -9,7 +9,7 @@ node {
         sh 'docker version'
         sh 'cat cidc-webpage/Dockerfile | docker build -f - . -t asia.gcr.io/metallic-slider/metallic-slider:v1'
         sh 'docker image list'
-	sh 'gcloud auth activate-service-account junkins-master@metallic-slider.iam.gserviceaccount.com --key-file=/var/lib/jenkins/metallic-slider-1b482ff0dbd1.json --force'
+	sh 'gcloud auth activate-service-account junkins-master@metallic-slider.iam.gserviceaccount.com --key-file=/var/lib/jenkins/metallic-slider-1b482ff0dbd1.json'
 	sh 'gcloud config set account junkins-master@metallic-slider.iam.gserviceaccount.com'
         sh 'gcloud auth configure-docker -q'
 	sh 'gcloud auth list'
