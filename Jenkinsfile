@@ -1,6 +1,7 @@
 node {
     stage("Git Check"){
 		sh 'ls -ltr ./'
+	    	sh 'ls -ltr ./cicd-webapp/'
     }
 
     stage("Docker build"){
