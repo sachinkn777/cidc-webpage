@@ -1,5 +1,6 @@
 #FROM ubuntu:18.04
 From httpd:2.4
+RUN ls -ltr
 RUN apt-get -y update 
 #apt-get -y upgrade
 #RUN apt-get -y install apache2 
