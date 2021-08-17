@@ -17,7 +17,7 @@ node {
         sh 'gcloud auth configure-docker -q'
 	sh 'gcloud auth list'
 	sh 'docker push asia.gcr.io/metallic-slider/metallic-slider:v11'
-	sh 'rm -rf /var/lib/jenkins/workspace/cicd-webapp*'
+	sh 'rm -rf /var/lib/jenkins/workspace/cicd-webapp-dev*'
     }
 
   
