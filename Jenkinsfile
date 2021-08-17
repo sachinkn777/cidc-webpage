@@ -22,7 +22,7 @@ node {
 
     stage("Rolling Update !!"){
     	sh 'gcloud container clusters get-credentials metallic-slider-cluster --zone asia-south2-a --project metallic-slider'
-    	sh 'kubectl set image -n default deployment metallic-slider-1 metallic-slider-1=asia.gcr.io/metallic-slider/metallic-slider:v12'
+    	sh 'kubectl set image -n default deployment metallic-slider-1 metallic-slider=asia.gcr.io/metallic-slider/metallic-slider:v12'
   }
 
 }
