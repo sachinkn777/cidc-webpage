@@ -26,5 +26,5 @@ node {
     	sh 'kubectl set image -n default deployment metallic-slider-1 metallic-slider=asia.gcr.io/metallic-slider/metallic-slider:v11'
     	sh 'kubectl expose deployment metallic-slider-1 --type LoadBalancer --port 80 --target-port 80'
   }
-}
+
 }
