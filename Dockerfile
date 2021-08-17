@@ -1,11 +1,11 @@
 #FROM ubuntu:18.04
 From httpd:2.4
+RUN ls -ltr
 RUN apt-get -y update 
 #apt-get -y upgrade
 #RUN apt-get -y install apache2 
 #RUN apt-get install -y git
 #RUN git clone https://github.com/sachinkn777/cidc-webpage.git
-RUN ls -ltr
 ADD index.html  /usr/local/apache2/htdocs/
 ADD js  /usr/local/apache2/htdocs/js
 ADD css  /usr/local/apache2/htdocs/css
