@@ -22,9 +22,7 @@ node {
 
     stage("Rolling Update !!"){
     	sh 'gcloud container clusters get-credentials metallic-slider-cluster --zone asia-south2-a --project metallic-slider'
-    	sh 'kubectl create deployment metallic-slider-1 --image=asia.gcr.io/metallic-slider/metallic-slider:v11'
     	sh 'kubectl set image -n default deployment metallic-slider-1 metallic-slider=asia.gcr.io/metallic-slider/metallic-slider:v11'
-    	sh 'kubectl expose deployment metallic-slider-1 --type LoadBalancer --port 80 --target-port 80'
   }
 
 }
