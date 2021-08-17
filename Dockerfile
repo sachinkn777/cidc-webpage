@@ -6,10 +6,10 @@ RUN apt-get -y update
 #RUN apt-get -y install apache2 
 #RUN apt-get install -y git
 #RUN git clone https://github.com/sachinkn777/cidc-webpage.git
-ADD index.html  /usr/local/apache2/htdocs/
-ADD js  /usr/local/apache2/htdocs/js
-ADD css  /usr/local/apache2/htdocs/css
-ADD images  /usr/local/apache2/htdocs/images
+COPY cidc-webpage/index.html  /usr/local/apache2/htdocs/
+COPY cidc-webpage/js  /usr/local/apache2/htdocs/js
+COPY cidc-webpage/css  /usr/local/apache2/htdocs/css
+COPY cidc-webpage/images  /usr/local/apache2/htdocs/images
 RUN ls -ltr /usr/local/apache2/htdocs/
 #RUN hostname
 EXPOSE 80
